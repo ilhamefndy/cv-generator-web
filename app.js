@@ -256,7 +256,7 @@ modeToggle.addEventListener('change', (e) => {
         // Raw Text Mode
         modeJsonLabel.classList.remove('active');
         modeRawLabel.classList.add('active');
-        jsonInput.placeholder = "Paste your raw CV text here from a PDF or Word document...\\nThe AI will organize it for you automatically!";
+        jsonInput.placeholder = "Paste your raw CV text here from a PDF or Word document...\nThe AI will organize it for you automatically!";
         instructionsList.innerHTML = `
             <li>Paste your messy, raw text into the editor.</li>
             <li>Click Generate CV.</li>
@@ -299,5 +299,9 @@ saveSettingsBtn.addEventListener('click', () => {
 generateBtn.addEventListener('click', generateCV);
 loadExampleBtn.addEventListener('click', loadExampleData);
 
-// Start Pyodide on load
-window.addEventListener('load', initPyodide);
+// Start Pyodide and sync UI on load
+window.addEventListener('load', () => {
+    initPyodide();
+    // Sync toggle state in case browser cached it as checked on refresh
+    modeToggle.dispatchEvent(new Event('change'));
+});
