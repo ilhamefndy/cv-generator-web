@@ -110,7 +110,12 @@ Do NOT wrap the response in markdown blocks (e.g. \`\`\`json). Output pure JSON.
     });
 
     if (!response.ok) {
-        throw new Error("Failed to call Gemini API. Check your API key.");
+        let errorMsg = "Unknown API Error";
+        try {
+            const errData = await response.json();
+            errorMsg = errData.error.message || JSON.stringify(errData);
+        } catch(e) {}
+        throw new Error(`Gemini API Error: ${response.status} - ${errorMsg}`);
     }
 
     const data = await response.json();
