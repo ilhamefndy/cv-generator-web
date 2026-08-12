@@ -1,0 +1,167 @@
+{
+  "output_filename": "ilham_effendy_cv.docx",
+  "header": {
+    "full_name": "MUHAMMAD ILHAM BIN NOOR EFFENDY",
+    "tagline": "Aspiring Data Engineer | Early careers in Oil & Gas, IT & Manufacturing",
+    "email": "muhdilham2001@gmail.com",
+    "phone": "+60197227626",
+    "linkedin": "Muhammad Ilham Effendy"
+  },
+  "summary": {
+    "text": "Early-Career Data Engineer in Oil and Gas with hands-on experience in ETL automation, API integration and data compliance validation within enterprise environments. Strong Python scripting background with experience in structured data processing, REST API ingestion and Power BI dashboard development. Currently working in system-level testing and debugging at Sony with exposure to production environments, Linux CLI and defect lifecycle management. Microsoft Certified (Azure & Power BI) with solid foundations in machine learning and data systems.",
+    "bold_words": []
+  },
+  "sections_order": [
+    "skills-summary",
+    "certifications",
+    "work",
+    "projects",
+    "education",
+    "skills-technical",
+    "references"
+  ],
+  "skills-summary": {
+    "header_text": "SKILLS",
+    "categories": [
+      {"label": "Python", "value": "Proficient in developing comprehensive ETL workflows, integrating REST APIs for data ingestion and automating master data compliance validation to significantly reduce manual verification efforts."},
+      {"label": "Data Engineering & Architecture", "value": "Adept at extracting, transforming and loading complex datasets to align with strict enterprise frameworks (such as OSDU standards) for improved data quality and structured analytical reporting."},
+      {"label": "Linux CLI & Debugging", "value": "Skilled in utilizing command-line tools (such as Tera Term) for deep-level system diagnostics, log capture, patch validation and root-cause debugging of high-impact software defects."},
+      {"label": "Software Testing & QA", "value": "Experienced in executing rigorous smoke and regression testing cycles, performing system-level validation on Android TV platforms and managing the complete defect lifecycle using tools like JIRA and TestRail."},
+      {"label": "Dataiku", "value": "Hands-on experience leveraging Dataiku in tandem with Python scripts to automate data workflows and streamline complex compliance tasks within enterprise environments."}
+    ]
+  },
+  "certifications": {
+    "header_text": "CERTIFICATION",
+    "entries": [
+      {
+        "title": "Core Designer, ML Practitioner & Advanced Designer by Dataiku",
+        "date_range": "Oct-2024",
+        "bullets": [
+          "Data Preparation: Skilled in using Dataiku DSS to clean, join and transform raw datasets into analysis-ready formats.",
+          "Visual Machine Learning: Trained in building and training machine learning models (Classification & Regression) using visual tools and automated features.",
+          "Workflow Automation: Understands how to build automated data flows and scenarios to streamline repetitive data tasks.",
+          "Data Visualization: Created charts and dashboards within Dataiku to present data findings and model results clearly."
+        ]
+      },
+      {
+        "title": "Power BI Data Analyst Associate by Microsoft",
+        "date_range": "Feb-2025",
+        "bullets": [
+          "Data Ingestion: Experienced in connecting to various data sources and using Power Query to clean and shape data for reporting.",
+          "DAX Foundations: Capable of writing basic to intermediate DAX formulas for calculated columns and measures.",
+          "Report Design: Designed interactive dashboards using standard visuals (charts, maps, slicers) to make data easy to understand.",
+          "Data Sharing: Knowledgeable in publishing reports to the Power BI Service and setting up basic data refreshes."
+        ]
+      },
+      {
+        "title": "Azure Data Fundamentals by Microsoft",
+        "date_range": "Feb-2025",
+        "bullets": [
+          "Cloud Basics: Solid understanding of how data is stored and managed in the cloud compared to traditional on-premises systems.",
+          "Azure Data Storage: Familiar with the basics of Azure SQL Database (Relational) and Azure Blob Storage (Non-relational).",
+          "Data Analytics in Azure: Introduction to how large-scale data is processed using tools like Azure Synapse Analytics.",
+          "Security & Privacy: Understands the fundamental concepts of data security and privacy within the Microsoft Azure environment."
+        ]
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "Sony",
+      "position": "Design Engineer System Software",
+      "date_range": "Aug 2025 - Current",
+      "bullets": [
+        "System-Level Validation: Performed comprehensive validation testing on Android TV platforms, ensuring stable media playback across major applications (Netflix, YouTube, Prime Video).",
+        "Firmware Stability: Executed smoke and regression testing cycles to validate firmware stability and performance prior to official release.",
+        "Linux & Debugging: Diagnosed system-level defects using Linux CLI and Tera Term, performing log capture, patch validation and root-cause debugging.",
+        "Defect Management: Managed and tracked software defects using JIRA and TestRail, ensuring reproducible issue documentation and efficient resolution cycles.",
+        "Production Support: Contributed to system stability by identifying and escalating high-impact performance defects."
+      ]
+    },
+    {
+      "company": "Schlumberger",
+      "position": "Data Engineer Intern",
+      "date_range": "Oct 2024 – Feb 2025",
+      "bullets": [
+        "ETL Automation: Developed Python-based ETL scripts to automate the extraction, transformation and loading of wellbore and trajectory datasets aligned with OSDU data standards.",
+        "API Integration: Integrated REST APIs for data ingestion and version updates via the Developer Portal.",
+        "Compliance Automation: Automated master data compliance validation using Python and Dataiku reducing manual verification efforts.",
+        "Data Structuring: Categorized and structured non-compliant records for analytical reporting and visualization.",
+        "Reporting & Visualization: Designed Power BI dashboards to monitor compliance metrics and data quality indicators."
+      ]
+    },
+    {
+      "company": "Sony",
+      "position": "IT Support Intern",
+      "date_range": "Sep 2021 - Feb 2022",
+      "bullets": [
+        "Workstation Support: Provided comprehensive hardware and software support, including PC formatting, software installation and new laptop configurations.",
+        "Network Maintenance: Assisted in network monitoring and troubleshooting tasks; actively participated in internal network project activities.",
+        "Security & Compliance: Supported the compliance team in managing virus mitigation cases, conducting system audits and preparing technical reports.",
+        "Helpdesk Services: Offered technical assistance for Office 365 reinstallation and resolved common hardware/software issues for end-users."
+      ]
+    }
+  ],
+  "work_header": "EXPERIENCE",
+  "projects": {
+    "header_text": "PROJECT & RESEARCH",
+    "entries": [
+      {
+        "title": "Final Year Project: Student Academic Performance Prediction",
+        "date_range": "Oct 2023 – Aug 2024",
+        "bullets": [
+          "Predictive Modeling: Developed a machine learning system to assess secondary school performance using factors like study time, previous grades and parental education.",
+          "Data Engineering: Integrated and preprocessed open-source datasets, handling missing values and categorical transformations; applied SelectKBest for feature selection.",
+          "Algorithm Evaluation: Utilized SVM, BPNN, and KNN to evaluate performance; achieved a peak accuracy of 92.0% using the SVM classifier.",
+          "Deployment: Built and deployed an interactive prediction prototype using the Streamlit framework for real-time data input and results."
+        ]
+      },
+      {
+        "title": "Deep Learning Project: Tomato Leaf Disease Detection",
+        "date_range": "Oct 2023 – Aug 2024",
+        "bullets": [
+          "Computer Vision: Developed a system to classify tomato leaf diseases across 25,000+ annotated images using PyTorch.",
+          "Model Architecture: Implemented and fine-tuned a ResNet18 model with ImageNet pre-trained weights; applied data augmentation (flipping, cropping) to increase robustness.",
+          "Performance: Achieved 99.4% test accuracy through hyperparameter tuning and early stopping to prevent overfitting.",
+          "Web Integration: Deployed the trained model into a user-friendly Streamlit web application for real-time, image-based disease diagnosis."
+        ]
+      },
+      {
+        "title": "IoT Project: Smart Pet Feeder",
+        "date_range": "Oct 2023 - Aug 2024",
+        "bullets": [
+          "Hardware Integration: Designed an automated feeding system using Arduino UNO, integrating IR motion sensors and ultrasonic sensors for food level monitoring.",
+          "Automation Logic: Programmed servo motors for automated dispensing and implemented real-time container level tracking.",
+          "Cloud Connectivity: Developed a mobile interface and push-notification system using the Blynk IoT platform to alert users when food levels were low.",
+          "Prototyping & Debugging: Managed full circuit wiring and resolved hardware challenges involving sensor pin mismatches and network configuration."
+        ]
+      }
+    ]
+  },
+  "education": [
+    {
+      "institution": "Bachelor Of Information Systems (Hons.) Intelligent Systems Engineering",
+      "date_range": "2025"
+    },
+    {
+      "institution": "Diploma Computer Science",
+      "date_range": "2022"
+    }
+  ],
+  "skills-technical": {
+    "header_text": "TECHNICAL SKILLS",
+    "categories": [
+      {"label": "Programming", "value": "Python (Pandas, NumPy, PyTorch), C++ (Arduino), Linux CLI (Tera Term, ADB)."},
+      {"label": "Data & AI", "value": "ETL Automation, REST API Integration, Machine Learning (SVM, CNN, ResNet18), Dataiku DSS."},
+      {"label": "Tools", "value": "Power BI, JIRA, TestRail, Git, Streamlit, Blynk IoT"},
+      {"label": "Testing", "value": "System-Level Validation, Smoke & Regression Testing, Firmware Debugging."}
+    ]
+  },
+  "references": [
+    {
+      "name": "Norliza Abdul Rahman",
+      "title": "Industrial training Manager",
+      "email": "nrahman2@slb.com"
+    }
+  ]
+}

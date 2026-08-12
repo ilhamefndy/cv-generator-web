@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Auto Generator</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Pyodide -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo">CV</div>
+                <h1>Generator</h1>
+            </div>
+            <p class="subtitle">Convert JSON data into a beautifully formatted Microsoft Word CV instantly in your browser.</p>
+            
+            <div class="features">
+                <div class="feature-item">
+                    <span class="icon">✨</span>
+                    <span>No backend required</span>
+                </div>
+                <div class="feature-item">
+                    <span class="icon">🔒</span>
+                    <span>100% private & secure</span>
+                </div>
+                <div class="feature-item">
+                    <span class="icon">⚡</span>
+                    <span>Lightning fast</span>
+                </div>
+            </div>
+            
+            <div class="instructions">
+                <h3>How to use:</h3>
+                <ol>
+                    <li>Paste your JSON data into the editor.</li>
+                    <li>Ensure it matches the expected structure.</li>
+                    <li>Click Generate CV.</li>
+                </ol>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <header class="header">
+                <h2>Data Editor</h2>
+                <div class="actions">
+                    <button id="loadExampleBtn" class="btn btn-secondary">Load Example Data</button>
+                    <button id="generateBtn" class="btn btn-primary" disabled>
+                        <span class="btn-text">Initializing Engine...</span>
+                        <div class="spinner" id="btnSpinner"></div>
+                    </button>
+                </div>
+            </header>
+
+            <div class="editor-container">
+                <textarea id="jsonInput" placeholder="Paste your JSON here..." spellcheck="false"></textarea>
+            </div>
+        </main>
+    </div>
+
+    <!-- Full screen loader -->
+    <div id="loaderOverlay" class="loader-overlay hidden">
+        <div class="loader-content">
+            <div class="pulse-ring"></div>
+            <h3 id="loaderText">Generating CV...</h3>
+            <p id="loaderSubtext">This might take a moment.</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
