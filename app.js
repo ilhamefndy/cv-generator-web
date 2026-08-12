@@ -24,27 +24,41 @@ let isReady = false;
 
 // Initialize Pyodide
 async function initPyodide() {
+    let progress = 0;
+    let step = "Downloading Python";
+    
+    // Fake progress interval that slows down as it gets higher
+    const progressInterval = setInterval(() => {
+        progress += (99 - progress) * 0.05; // Asymptotically approaches 99%
+        const displayProg = Math.floor(progress);
+        btnText.textContent = `${step} - ${displayProg}%`;
+    }, 200);
+
     try {
         console.log("Initializing Pyodide...");
+        step = "Downloading Python Engine (1/3)";
         pyodide = await loadPyodide();
         
-        btnText.textContent = "Loading Dependencies...";
-        
-        // Load micropip to install packages
+        step = "Loading Environment (2/3)";
+        progress += 20; // Jump progress
         await pyodide.loadPackage("micropip");
         const micropip = pyodide.pyimport("micropip");
         
-        // Install python-docx (and automatically lxml)
+        step = "Installing Dependencies (3/3)";
+        progress += 20; // Jump progress
         await micropip.install("python-docx");
         
         console.log("Pyodide is ready!");
         isReady = true;
+        
+        clearInterval(progressInterval);
         
         // Enable generate button
         btnText.textContent = "Generate CV";
         generateBtn.disabled = false;
         
     } catch (error) {
+        clearInterval(progressInterval);
         console.error("Failed to initialize Pyodide:", error);
         btnText.textContent = "Error loading engine";
         alert("Failed to initialize the Python engine. Please check your connection and reload.");
@@ -84,9 +98,9 @@ You must extract all the information and output ONLY a valid JSON object matchin
   "skills": { "header_text": "SKILLS", "categories": [{ "label": "...", "value": "..." }] },
   "references": [{ "name": "...", "title": "...", "phone": "...", "email": "..." }]
 }
-Do NOT wrap the response in markdown blocks (e.g. \`\`\`json). Output pure JSON. Ensure data maps correctly to these arrays/objects.`;
+Do NOT wrap the response in markdown blocks (e.g. ```json). Output pure JSON. Ensure data maps correctly to these arrays/objects.`;
 
-    const url = \`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key=\${apiKey}\`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key=${apiKey}`;
     const response = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
