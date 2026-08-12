@@ -37,18 +37,32 @@
             
             <div class="instructions">
                 <h3>How to use:</h3>
-                <ol>
+                <ol id="instructionsList">
                     <li>Paste your JSON data into the editor.</li>
                     <li>Ensure it matches the expected structure.</li>
                     <li>Click Generate CV.</li>
                 </ol>
+            </div>
+            
+            <div class="settings-trigger">
+                <button id="settingsBtn" class="btn btn-secondary btn-small">⚙️ AI Settings</button>
             </div>
         </aside>
 
         <!-- Main Content -->
         <main class="content">
             <header class="header">
-                <h2>Data Editor</h2>
+                <div class="header-left">
+                    <h2 id="editorTitle">Data Editor</h2>
+                    <div class="mode-toggle">
+                        <span class="mode-label active" id="modeJsonLabel">JSON</span>
+                        <label class="switch">
+                            <input type="checkbox" id="modeToggle">
+                            <span class="slider round"></span>
+                        </label>
+                        <span class="mode-label" id="modeRawLabel">Magic Text 🌟</span>
+                    </div>
+                </div>
                 <div class="actions">
                     <button id="loadExampleBtn" class="btn btn-secondary">Load Example Data</button>
                     <button id="generateBtn" class="btn btn-primary" disabled>
@@ -70,6 +84,22 @@
             <div class="pulse-ring"></div>
             <h3 id="loaderText">Generating CV...</h3>
             <p id="loaderSubtext">This might take a moment.</p>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="modal hidden">
+        <div class="modal-content">
+            <h3>AI Settings</h3>
+            <p>To use the Magic Text mode, you need a free Gemini API key to parse the raw text into structured data. This key is stored securely in your browser's local storage.</p>
+            <div class="input-group">
+                <label for="apiKeyInput">Gemini API Key:</label>
+                <input type="password" id="apiKeyInput" placeholder="AIzaSy...">
+            </div>
+            <div class="modal-actions">
+                <button id="closeSettingsBtn" class="btn btn-secondary">Close</button>
+                <button id="saveSettingsBtn" class="btn btn-primary">Save Key</button>
+            </div>
         </div>
     </div>
 
