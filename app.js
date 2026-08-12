@@ -98,8 +98,7 @@ You must extract all the information and output ONLY a valid JSON object matchin
   "skills": { "header_text": "SKILLS", "categories": [{ "label": "...", "value": "..." }] },
   "references": [{ "name": "...", "title": "...", "phone": "...", "email": "..." }]
 }
-Do NOT wrap the response in markdown blocks (e.g. ```json). Output pure JSON. Ensure data maps correctly to these arrays/objects.`;
-
+Do NOT wrap the response in markdown blocks (e.g. \`\`\`json). Output pure JSON. Ensure data maps correctly to these arrays/objects.`;
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key=${apiKey}`;
     const response = await fetch(url, {
         method: 'POST',
@@ -118,7 +117,7 @@ Do NOT wrap the response in markdown blocks (e.g. ```json). Output pure JSON. En
     let textOutput = data.candidates[0].content.parts[0].text;
     
     // Clean up potential markdown formatting from the AI
-    textOutput = textOutput.replace(/^\`\`\`json\\s*/i, '').replace(/\\s*\`\`\`$/, '');
+    textOutput = textOutput.replace(/^```json\s*/i, '').replace(/\s*```$/, '');
     
     return textOutput;
 }
@@ -143,6 +142,10 @@ async function generateCV() {
             loaderSubtext.textContent = "Parsing your raw text into structured data...";
             jsonData = await magicParseText(inputVal);
         } catch(e) {
+            if (e.message !== "Missing API Key") {
+                alert("AI Error: " + (e.message || "Failed to process text."));
+            }
+            console.error(e);
             loaderOverlay.classList.add('hidden');
             return;
         }
